@@ -153,8 +153,8 @@ if (isset($_GET['currency'])) {
                     <span>Welcome<i class="bi bi-hand-thumbs-up ms-1"></i></span>
                 </button>
             </div>
-            h"><
-                <div>
+
+            <div>
                 <a href="index.php?deals=1" class="text-danger fw-bold text-decoration-none px-2 py-1">SuperDeals</a>
                 <a href="index.php?choice=1" class="text-dark fw-medium text-decoration-none px-2 py-1">Choice</a>
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Automotive</a>
@@ -164,6 +164,7 @@ if (isset($_GET['currency'])) {
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Toys & Games</a>
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Furniture</a>
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Beauty & Health</a>
+            </div>
         </div>
 
     </div>
