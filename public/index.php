@@ -48,7 +48,7 @@ require LAYOUTS_PATH . '/navbar.php';
         <div class="col-12 col-md-6 ps-4 ps-md-5 py-4 d-flex flex-column justify-content-center h-100">
 
             <small class="text-light fw-bold tracking-wide">
-                FIND IT. LOVE IT. GET IT
+                FIND IT. LOVE IT. GET IT 🔥
             </small>
 
             <h1 class="fw-bold my-3 display-6 text-white">
