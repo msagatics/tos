@@ -24,3 +24,7 @@ if ($con->connect_error) {
 }
 
 $con->set_charset('utf8mb4');
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}

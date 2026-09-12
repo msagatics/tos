@@ -15,7 +15,7 @@ $products = $product['products'] ?? [];
         $id = $row['id'];
         $name = $row['name'];
         $description = $row['description'];
-        $price = $row['price'];
+        $price = convertPrice($row['price']);
         $image = $row['image'];
         $image_path = PRODUCTS_UPLOADS_URL . '/';
         ?>
@@ -59,7 +59,7 @@ $products = $product['products'] ?? [];
                     <div class="d-flex align-items-center gap-1 product-price-row">
 
                         <span class="fw-bold text-dark price-text">
-                            TZS <?= htmlspecialchars(number_format($price)); ?>
+                            <?= number_format($price, 2) ?> <?= getCurrency() ?>
                         </span>
 
                         <a href="index.php?cart=<?= urlencode($id) ?>"

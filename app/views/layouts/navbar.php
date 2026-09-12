@@ -2,6 +2,12 @@
 require_once CONFIG_PATH . '/db.php';
 include LAYOUTS_PATH . '/head.php';
 include CORE_PATH . '/functions.php';
+
+// Load currency
+if (isset($_GET['currency'])) {
+    setCurrency($_GET['currency']);
+}
+
 ?>
 
 <!-- AliExpress Style Responsive Navbar -->
@@ -45,15 +51,39 @@ include CORE_PATH . '/functions.php';
                     </div>
                 </div>
 
-                <!-- Language / Country (Desktop Only) -->
+                <!-- Currency / Country -->
                 <div class="dropdown d-none d-lg-block">
-                    <a href="#" class="text-dark text-decoration-none dropdown-toggle d-flex align-items-center gap-1 fw-semibold small" data-bs-toggle="dropdown">
-                        <span>🇹🇿</span> EN/TZS
+
+                    <a href="#"
+                        class="text-dark text-decoration-none dropdown-toggle d-flex align-items-center gap-1 fw-semibold small"
+                        data-bs-toggle="dropdown">
+
+                        <span>
+                            <?= getCurrency() === 'USD' ? '🇺🇸' : '🇹🇿' ?>
+                        </span>
+
+                        <?= getCurrency() ?>
+
                     </a>
+
                     <ul class="dropdown-menu border-0 shadow rounded-3 fs-7">
-                        <li><a class="dropdown-item" href="#">🇹🇿 TZS</a></li>
-                        <li><a class="dropdown-item" href="#">🇺🇸 USD</a></li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="?currency=TZS">
+                                🇹🇿 TZS
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="?currency=USD">
+                                🇺🇸 USD
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
 
                 <!-- 1. Person Icon (Desktop: Dropdown | Mobile: Offcanvas Trigger) -->
@@ -102,11 +132,15 @@ include CORE_PATH . '/functions.php';
         <!-- Collapsible Mobile Search Input -->
         <div class="collapse d-lg-none mt-2" id="mobileSearchBox">
             <form action="index.php" method="GET">
+
                 <div class="input-group border border-1 border-dark rounded-pill overflow-hidden bg-white p-1">
+
                     <input type="search" name="search" class="form-control border-0 shadow-none px-3 py-1 text-dark" placeholder="Search products, brands..." aria-label="Search">
+
                     <button class="btn btn-dark rounded-circle p-1 d-flex align-items-center justify-content-center" type="submit" style="width: 32px; height: 32px;">
                         <i class="bi bi-search text-white small"></i>
                     </button>
+
                 </div>
             </form>
         </div>
@@ -116,26 +150,23 @@ include CORE_PATH . '/functions.php';
 
             <div class="dropdown">
                 <button class="btn btn-light bg-light border-0 rounded-pill px-3 py-1 fw-bold d-flex align-items-center gap-1 small" data-bs-toggle="dropdown">
-                    <span>All Categories</span>
+                    <span>Welcome<i class="bi bi-hand-thumbs-up ms-1"></i></span>
                 </button>
-                <ul class="dropdown-menu border-0 shadow rounded-3 mt-1">
-                    <?php if (function_exists('getCategories')) {
-                        getCategories();
-                    } ?>
-                </ul>
             </div>
-
-            <a href="index.php?deals=1" class="text-danger fw-bold text-decoration-none px-2 py-1">SuperDeals</a>
-            <a href="index.php?choice=1" class="text-dark fw-medium text-decoration-none px-2 py-1">Choice</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Automotive</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Appliances</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Women's Clothing</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Men's Clothing</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Toys & Games</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Furniture</a>
-            <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Beauty & Health</a>
-
+            h"><
+                <div>
+                <a href="index.php?deals=1" class="text-danger fw-bold text-decoration-none px-2 py-1">SuperDeals</a>
+                <a href="index.php?choice=1" class="text-dark fw-medium text-decoration-none px-2 py-1">Choice</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Automotive</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Appliances</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Women's Clothing</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Men's Clothing</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Toys & Games</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Furniture</a>
+                <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Beauty & Health</a>
         </div>
+
+    </div>
 
     </div>
 </header>

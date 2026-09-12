@@ -10,3 +10,11 @@ $services = [
 foreach ($services as $service) {
     require_once MODULES_PATH . '/' . $service;
 }
+
+$services = [
+    'currency.php'
+];
+
+foreach ($services as $service) {
+    require_once CORE_PATH . '/' . $service;
+}
