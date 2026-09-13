@@ -156,7 +156,6 @@ if (isset($_GET['currency'])) {
 
             <div>
                 <a href="index.php?deals=1" class="text-danger fw-bold text-decoration-none px-2 py-1">SuperDeals</a>
-                <a href="index.php?choice=1" class="text-dark fw-medium text-decoration-none px-2 py-1">Choice</a>
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Automotive</a>
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Appliances</a>
                 <a href="#" class="text-dark fw-medium text-decoration-none px-2 py-1">Women's Clothing</a>
